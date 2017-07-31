@@ -48,7 +48,7 @@ async function g() {
 }
 g();
 
-// 5. fro-await-of and rejections
+// 5. for-await-of and rejections
 function createRejectingIterable() {
   return {
     [Symbol.asyncIterator]() {
@@ -67,5 +67,12 @@ function createRejectingIterable() {
     }
   } catch (e) {
     console.error(e);
+  }
+})();
+
+// 6. for-await-of and sync iterables
+(async function () {
+  for await (const x of ['sy', 'nc']) {
+    console.log(x);
   }
 })();
