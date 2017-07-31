@@ -47,3 +47,25 @@ async function g() {
   }
 }
 g();
+
+// 5. fro-await-of and rejections
+function createRejectingIterable() {
+  return {
+    [Symbol.asyncIterator]() {
+      return this;
+    },
+    next() {
+      return Promise.reject(new Error('Problem!'));
+    }
+  }
+}
+
+(async function () {
+  try {
+    for await (const x of createRejectingIterable()) {
+      console.log(x);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+})();
