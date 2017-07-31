@@ -30,3 +30,20 @@ asyncIterator
     console.log(res3);
     return asyncIterator.next()
   });
+
+// 3. for-await-of 
+async function f() {
+  for await (const x of createAsyncIterable(['a', 'b', 'c'])) {
+    console.log(x);
+  }
+}
+f();
+
+// 4. for-await-of temp break;
+async function g() {
+  for await (const x of createAsyncIterable(['e', 'f', 'g'])) {
+    console.log(x);
+    break;
+  }
+}
+g();
