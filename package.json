@@ -1,0 +1,24 @@
+{
+  "name": "babel-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8845musign/babel-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8845musign/babel-template/issues"
+  },
+  "homepage": "https://github.com/8845musign/babel-template#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}
